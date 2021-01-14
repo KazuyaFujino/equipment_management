@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @rental.user_id %>
+</p>
+
+<p>
+  <strong>Items:</strong>
+  <%= @rental.items_id %>
+</p>
+
+<p>
+  <strong>Checkout date:</strong>
+  <%= @rental.checkout_date %>
+</p>
+
+<p>
+  <strong>Checkin due date:</strong>
+  <%= @rental.checkin_due_date %>
+</p>
+
+<p>
+  <strong>Checkin date:</strong>
+  <%= @rental.checkin_date %>
+</p>
+
+<%= link_to 'Edit', edit_rental_path(@rental) %> |
+<%= link_to 'Back', rentals_path %>

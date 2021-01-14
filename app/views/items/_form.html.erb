@@ -1,0 +1,42 @@
+<%= form_with(model: item, local: true) do |form| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :category_id, '◆分類' %>
+    <%= form.collection_select(:category_id, @categories, :id, :category_name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name, '◆備品名' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :overview, '◆備考'  %>
+    <%= form.text_area :overview %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address, '◆保管場所'  %>
+    <%= form.text_area :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :item_img %>
+    <%= form.text_area :item_img %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

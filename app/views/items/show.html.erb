@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>分類:</strong>
+  <%= @categories.find(@item.category_id).category_name %>
+</p>
+
+<p>
+  <strong>備品名:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>備考:</strong>
+  <%= @item.overview %>
+</p>
+
+<p>
+  <strong>保管場所:</strong>
+  <%= @item.address %>
+</p>
+
+<p>
+  <strong>Item img:</strong>
+  <%= @item.item_img %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
